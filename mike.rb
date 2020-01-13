@@ -1,4 +1,4 @@
-def map_to_negativize(source_array)
+map_to_negativize(source_array)
   index = 0
   new_array = []
     while index < source_array.length do
@@ -9,7 +9,10 @@ def map_to_negativize(source_array)
   new_array
 end
 
-def map_to_no_change(source_array)
+
+
+
+map_to_no_change(source_array)
   index = 0
   new_array = []
     while index < source_array.length do
@@ -19,7 +22,7 @@ def map_to_no_change(source_array)
   new_array
 end
 
-def map_to_double(source_array)
+map_to_double(source_array)
   index = 0
   new_array = []
     while index < source_array.length do
@@ -30,7 +33,7 @@ def map_to_double(source_array)
   new_array
 end
 
-def map_to_square(source_array)
+map_to_square(source_array)
   index = 0
   new_array = []
     while index < source_array.length do
@@ -43,40 +46,31 @@ end
 
 
 
-def reduce_to_total(source_array, starting_point = 0)
-  partial_result = 0
-  index = 0
-  while index < source_array.length do
-      partial_result += source_array[index]
-      index += 1
+reduce_to_total(source_array, starting_point)
+  result = 0
+  while starting_point < source_array.length do
+      result += source_array[starting_point]
+      starting_point += 1
     end
-    result = partial_result + starting_point
   result
 end
 
-def reduce_to_all_true(source_array)
+reduce_to_all_true(source_array)
   index = 0
   while index < source_array.length do
-      if !source_array[index]
-        answer = !!nil
-      else
-        answer = !!5
-      end
-      index += 1
-  end
-  return answer
-end
-
-def reduce_to_any_true(source_array)
- index = 0
-  while index < source_array.length do
       if source_array[index]
-        answer = !!5
-      else
-        answer = !!nil
+        return true
       end
-      index += 1
+    index += 1
   end
-  return answer
 end
 
+reduce_to_any_true(source_array)
+  index = 0
+    while index < source_array.length do
+      if source_array[index]
+        return source_array[index]
+      end
+     index += 1
+    end
+end
